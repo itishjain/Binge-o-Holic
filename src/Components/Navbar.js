@@ -11,7 +11,7 @@ const Navbar = () => {
     <div>
       <ul>
         {LINKS.map(items => (
-          <li key={items.to}>
+          <li key={items.to} align="center">
             <Link to={items.to}>{items.text}</Link>
           </li>
         ))}
