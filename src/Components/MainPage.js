@@ -10,7 +10,6 @@ const MainPage = ({ children }) => {
         subtitle1="Are you looking for Entertainment?"
         subtitle2="Don't worry we've Covered You :)"
       />
-
       <Navbar />
       {children}
     </div>
