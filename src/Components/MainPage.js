@@ -6,9 +6,9 @@ const MainPage = ({ children }) => {
   return (
     <div>
       <Title
-        title="BOX - OFFICE"
+        title="BINGE -o- HOLIC"
         subtitle1="Are you looking for Entertainment?"
-        subtitle2="Don't worry we've Covered You :)"
+        subtitle2="Don't worry we've got You Covered :)"
       />
       <Navbar />
       {children}

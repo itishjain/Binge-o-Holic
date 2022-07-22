@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import MainPage from '../Components/MainPage';
 import { getAPI } from '../misc/fetchAPI';
+import ShowGrid from '../Components/Shows/ShowGrid';
+import ActorGrid from '../Components/Actors/ActorGrid';
 
 const Home = () => {
   const [searchInput, setInput] = useState('');
@@ -47,20 +49,12 @@ const Home = () => {
       return results[0].show ? ( // This conditon means if results first element is show then give o/p of shows.
         <div>
           <h3 align="center">Results are : </h3>
-          {results.map(items => (
-            <div key={items.show.id} align="center">
-              {items.show.name}
-            </div>
-          ))}
+          <ShowGrid data={results} />
         </div>
       ) : (
         <div>
           <h3 align="center">Results are : </h3>
-          {results.map(items => (
-            <div key={items.person.id} align="center">
-              {items.person.name}
-            </div>
-          ))}
+          <ActorGrid data={results} />
         </div>
       );
     }
@@ -75,9 +69,9 @@ const Home = () => {
 
   return (
     <MainPage>
-      <h1 align="center">This is Home Page.</h1>
+      <h1 align="center">What are you looking for ?</h1>
       <div align="center">
-        <div>
+        <div className="radioBtns">
           <label htmlFor="searchShows">
             Shows
             <input
@@ -101,13 +95,14 @@ const Home = () => {
         </div>
         <input
           type="text"
+          className="searchInputBox"
           onChange={onInputChange}
           onKeyDown={resultPressingEnter}
           value={searchInput}
-          placeholder="Search Something"
+          placeholder="  Search Something ......"
         ></input>
 
-        <button type="button" onClick={onSearch}>
+        <button id="searchBtn" type="button" onClick={onSearch}>
           Search
         </button>
       </div>

@@ -9,9 +9,9 @@ const LINKS = [
 const Navbar = () => {
   return (
     <div>
-      <ul>
+      <ul className="navlinks">
         {LINKS.map(items => (
-          <li key={items.to} align="center">
+          <li key={items.to} className="linkItem">
             <Link to={items.to}>{items.text}</Link>
           </li>
         ))}

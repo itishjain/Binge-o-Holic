@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import Home from './Pages/Home';
+import InfoShow from './Pages/InfoShow';
 import Starred from './Pages/Starred';
 
 function App() {
@@ -11,6 +12,9 @@ function App() {
       </Route>
       <Route exact path="/starred">
         <Starred />
+      </Route>
+      <Route exact path="/shows/:id">
+        <InfoShow />
       </Route>
       <Route>
         <h1 align="center">*************** Error 404 *************** </h1>
