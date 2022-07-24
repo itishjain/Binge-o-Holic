@@ -12,11 +12,11 @@ export const StyledShowCards = styled(StyleCard)`
       width: 110px;
       border: 1px groove #eee;
       box-shadow: 2px 2px 2px #2d2d2d;
+      cursor: pointer;
     }
     .btn:hover {
       color: #000;
       background: white;
-      border: 1px groove #111111;
       box-shadow: 2px 2px 2px #1d1d1d;
     }
   }

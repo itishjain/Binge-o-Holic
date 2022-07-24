@@ -2,7 +2,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 18px;
   margin: 0;
-  padding-top: 40px;
+  padding: 40px 0 0 0;
   background-color: rgb(231, 230, 230);
 }
 
@@ -32,6 +32,7 @@ label {
 }
 
 #searchBtn {
+  margin: 10px;
   height: 2.4em;
   width: 6em;
   border-radius: 10px;
@@ -42,6 +43,9 @@ label {
   cursor: pointer;
 }
 
+.searchItems {
+  margin-top: 20px;
+}
 /* .nav {
   display: flex;
   flex-direction: column;
@@ -56,4 +60,108 @@ label {
 }
 .linkItem:hover {
   font-size: 20px;
+}
+
+/* For the loading message */
+
+.load {
+  margin: 0 auto;
+  margin-top: 200px;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 15px solid rgb(200, 200, 200);
+  border-bottom: 15px solid rgb(0, 120, 240);
+  animation: loading 1.2s ease infinite;
+}
+@keyframes loading {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.FullInfo {
+  display: flex;
+  padding: 0 0 0 40px;
+  flex-wrap: wrap;
+}
+
+.Details_page_span,
+.Seasons_page_span {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.Other-Details,
+.details_section,
+.summary_section,
+.cast_section,
+.seasons_detail,
+.Cast_Details {
+  padding-left: 40px;
+}
+
+.Image-section {
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px groove grey;
+  margin-right: 30px;
+}
+
+.Season_num {
+  text-decoration: underline;
+  font-size: 22px;
+  font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Other-Details,
+.seasons_detail,
+.Cast_Details {
+  margin-bottom: 60px;
+}
+
+.Cast_Details {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cast-content {
+  margin: 0 auto;
+  margin-bottom: 60px;
+  margin-right: 20px;
+}
+
+.cast-image {
+  border: 5px groove rgb(134, 134, 134);
+  border-radius: 10px;
+}
+
+.cast-name {
+  margin: 0 auto;
+}
+
+.checked {
+  color: rgb(241, 205, 0);
+}
+
+.genre-title,
+.Lang {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.genre-style {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+
+.genre-keys {
+  margin: 5px 0 0 10px;
+  background-color: rgb(142, 255, 138);
+  color: rgb(15, 66, 0);
+  padding: 1px 10px 1px 10px;
+  border-radius: 20px;
+  border: 1px solid rgb(6, 66, 0);
+  cursor: pointer;
 }

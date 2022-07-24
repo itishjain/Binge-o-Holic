@@ -93,18 +93,19 @@ const Home = () => {
             ></input>
           </label>
         </div>
-        <input
-          type="text"
-          className="searchInputBox"
-          onChange={onInputChange}
-          onKeyDown={resultPressingEnter}
-          value={searchInput}
-          placeholder="  Search Something ......"
-        ></input>
-
-        <button id="searchBtn" type="button" onClick={onSearch}>
-          Search
-        </button>
+        <div className="searchItems">
+          <input
+            type="text"
+            className="searchInputBox"
+            onChange={onInputChange}
+            onKeyDown={resultPressingEnter}
+            value={searchInput}
+            placeholder="  Search Something ......"
+          />
+          <button id="searchBtn" type="button" onClick={onSearch}>
+            Search
+          </button>
+        </div>
       </div>
       {renderResults()}
     </MainPage>
