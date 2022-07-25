@@ -17,7 +17,6 @@ const Home = () => {
   const onInputChange = event => {
     setInput(event.target.value);
   };
-  console.log(onInputChange);
 
   // Fetch from API and search when either enter key is pressed or button is clicked.
   const onSearch = () => {
@@ -66,7 +65,6 @@ const Home = () => {
   const onRadioChange = event => {
     setRadioSearchOpt(event.target.value);
   };
-  console.log(radioSearchOpt);
 
   return (
     <MainPage>
