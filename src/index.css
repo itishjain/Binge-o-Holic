@@ -4,6 +4,9 @@ body {
   margin: 0;
   padding: 40px 0 0 0;
   background-color: rgb(231, 230, 230);
+  /* background: url(../src/images/theatre.jpg);
+  background-position: center;
+  background-size: cover; */
 }
 
 .radioBtns {
@@ -57,7 +60,18 @@ label {
   display: flex;
   justify-content: space-evenly;
   list-style: none;
+  flex-wrap: wrap;
 }
+
+.navigation {
+  margin: 0 auto;
+  background-color: rgb(233, 233, 233);
+  padding: 10px;
+  margin-bottom: 20px;
+  box-shadow: 3.5px 3.5px 5px #1d1d1dbb;
+  border-radius: 20px;
+}
+
 .linkItem:hover {
   font-size: 20px;
 }
@@ -147,7 +161,7 @@ label {
 
 .genre-title,
 .Lang {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 800;
 }
 
@@ -164,4 +178,13 @@ label {
   border-radius: 20px;
   border: 1px solid rgb(6, 66, 0);
   cursor: pointer;
+}
+.show-Title {
+  color: #df2f45;
+  margin-bottom: 90px;
+}
+
+.show-Heading {
+  font-size: 50px;
+  font-weight: 500;
 }

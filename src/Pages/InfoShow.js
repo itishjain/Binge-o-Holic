@@ -1,64 +1,66 @@
-import React, { useEffect, useReducer } from 'react';
+import React from 'react';
 import { useParams } from 'react-router';
 import Cast from '../Components/Shows/Cast';
 import Details from '../Components/Shows/Details';
 import Seasons from '../Components/Shows/Seasons';
 import ShowMainInfo from '../Components/Shows/ShowMainInfo';
-import { getAPI } from '../misc/fetchAPI';
+import { useCreatedShow } from '../misc/custom-hooks';
 
-const reducer = (prevState, action) => {
-  switch (action.type) {
-    case 'FETCH_SUCCESS':
-      return {
-        isLoading: false,
-        error: null,
-        show: action.show,
-      };
+// const reducer = (prevState, action) => {
+//   switch (action.type) {
+//     case 'FETCH_SUCCESS':
+//       return {
+//         isLoading: false,
+//         error: null,
+//         show: action.show,
+//       };
 
-    case 'FETCH_FAILED':
-      return { ...prevState, isLoading: false, error: action.error };
+//     case 'FETCH_FAILED':
+//       return { ...prevState, isLoading: false, error: action.error };
 
-    default:
-      return prevState;
-  }
-};
+//     default:
+//       return prevState;
+//   }
+// };
 
-const initalState = {
-  show: null,
-  isLoading: true,
-  error: null,
-};
+// const initalState = {
+//   show: null,
+//   isLoading: true,
+//   error: null,
+// };
 
 const InfoShow = () => {
   const { id } = useParams();
 
-  const [{ show, isLoading, error }, dispatch] = useReducer(
-    reducer,
-    initalState
-  );
+  const { show, isLoading, error } = useCreatedShow(id);
 
-  // const [showInfo, setShowInfo] = useState(null);
-  // const [isLoading, setIsLoading] = useState(true);
-  // const [error, setError] = useState(null);
+  // const [{ show, isLoading, error }, dispatch] = useReducer(
+  //   reducer,
+  //   initalState
+  // );
 
-  // console.log(state);
+  // // const [showInfo, setShowInfo] = useState(null);
+  // // const [isLoading, setIsLoading] = useState(true);
+  // // const [error, setError] = useState(null);
 
-  // console.log(id);
-  useEffect(() => {
-    getAPI(`/shows/${id}?embed[]=seasons&embed[]=cast`)
-      .then(ans => {
-        dispatch({ type: 'FETCH_SUCCESS', show: ans });
-        setTimeout(() => {
-          // setShowInfo(ans);
-          // setIsLoading(false);
-        }, 1000);
-      })
-      .catch(err => {
-        dispatch({ type: 'FETCH_FAILED', error: err.message });
-        // setError(err.message);
-        // setIsLoading(false);
-      });
-  }, [id]);
+  // // console.log(state);
+
+  // // console.log(id);
+  // useEffect(() => {
+  //   getAPI(`/shows/${id}?embed[]=seasons&embed[]=cast`)
+  //     .then(ans => {
+  //       dispatch({ type: 'FETCH_SUCCESS', show: ans });
+  //       setTimeout(() => {
+  //         // setShowInfo(ans);
+  //         // setIsLoading(false);
+  //       }, 1000);
+  //     })
+  //     .catch(err => {
+  //       dispatch({ type: 'FETCH_FAILED', error: err.message });
+  //       // setError(err.message);
+  //       // setIsLoading(false);
+  //     });
+  // }, [id]);
 
   console.log(show);
 

@@ -1,4 +1,6 @@
 import { useReducer, useEffect } from 'react';
+import { useState } from 'react';
+import { getAPI } from './fetchAPI';
 
 const showsReducer = (prevState, action) => {
   switch (action.type) {
@@ -55,4 +57,66 @@ function usePersistentReducer(reducer, initialState, key) {
 
 export function useShows(key = 'shows') {
   return usePersistentReducer(showsReducer, [], key);
+}
+
+export function useLastSearched(key = 'lastSeached') {
+  const [searchInput, setInput] = useState(() => {
+    const persistent = sessionStorage.getItem(key);
+    return persistent ? JSON.parse(persistent) : '';
+  });
+
+  const persistentInput = newState => {
+    setInput(newState);
+    sessionStorage.setItem(key, JSON.stringify(newState));
+  };
+
+  return [searchInput, persistentInput];
+}
+
+export function useCreatedShow(showId) {
+  const reducer = (prevState, action) => {
+    switch (action.type) {
+      case 'FETCH_SUCCESS':
+        return {
+          isLoading: false,
+          error: null,
+          show: action.show,
+        };
+
+      case 'FETCH_FAILED':
+        return { ...prevState, isLoading: false, error: action.error };
+
+      default:
+        return prevState;
+    }
+  };
+  const [state, dispatch] = useReducer(reducer, {
+    show: null,
+    isLoading: true,
+    error: null,
+  });
+
+  // const [showInfo, setShowInfo] = useState(null);
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [error, setError] = useState(null);
+
+  // console.log(state);
+
+  // console.log(id);
+  useEffect(() => {
+    getAPI(`/shows/${showId}?embed[]=seasons&embed[]=cast`)
+      .then(ans => {
+        dispatch({ type: 'FETCH_SUCCESS', show: ans });
+        setTimeout(() => {
+          // setShowInfo(ans);
+          // setIsLoading(false);
+        }, 1000);
+      })
+      .catch(err => {
+        dispatch({ type: 'FETCH_FAILED', error: err.message });
+        // setError(err.message);
+        // setIsLoading(false);
+      });
+  }, [showId]);
+  return state;
 }

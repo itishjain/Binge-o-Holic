@@ -2,9 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { StyledShowCards } from '../../ShowCard.styled';
 // import { StyleCard } from '../Styled';
-import { StyleText } from '../Styled';
+import { StyleText, Wishlist } from '../Styled';
 
-const ShowCard = ({ id, name, image, summary, genre, language, runtime }) => {
+const ShowCard = ({
+  id,
+  name,
+  image,
+  summary,
+  genre,
+  language,
+  runtime,
+  onWatchListClick,
+  isStarred,
+}) => {
   const summaryAsText = summary
     ? `${summary.split(' ').slice(0, 10).join(' ').replace(/<.+?>/g, '')}...`
     : 'No summary Found';
@@ -34,8 +44,10 @@ const ShowCard = ({ id, name, image, summary, genre, language, runtime }) => {
         </Link>
       </p>
       <div className="btn-wrapper">
-        <button type="button" className="btn">
-          Add to list +
+        <button type="button" className="btn" onClick={onWatchListClick}>
+          <Wishlist wishlisted={isStarred}>
+            <p>{isStarred ? 'Added ✔ ' : 'Add to list + '}</p>
+          </Wishlist>
         </button>
       </div>
     </StyledShowCards>

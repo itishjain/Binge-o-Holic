@@ -7,8 +7,8 @@ export const StyledShowCards = styled(StyleCard)`
     .btn {
       margin-top: 10px;
       font-size: 16px;
-      padding: 2px;
-      border-radius: 10px;
+      padding: 4px;
+      border-radius: 14px;
       width: 110px;
       border: 1px groove #eee;
       box-shadow: 2px 2px 2px #2d2d2d;

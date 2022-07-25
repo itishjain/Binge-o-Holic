@@ -1,8 +1,16 @@
 import React from 'react';
 import Image_not_Found from '../../images/not-found.png';
-import { StyledShowCards } from '../../ShowCard.styled';
+// import { StyledShowCards } from '../../ShowCard.styled';
 
-const ShowMainInfo = ({ image, name, rating, genres, language }) => {
+const ShowMainInfo = ({
+  image,
+  name,
+  rating,
+  genres,
+  language,
+  onWatchListClick,
+  isStarred,
+}) => {
   return (
     <div className="FullInfo">
       <div className="Image-section">
@@ -10,8 +18,11 @@ const ShowMainInfo = ({ image, name, rating, genres, language }) => {
       </div>
       <div className="Details-section">
         <div className="Main-info">
-          <h1>
-            Name : <i>{name}</i>
+          <h1 className="show-Heading">
+            Name :
+            <span className="show-Title">
+              <i>{name}</i>
+            </span>
           </h1>
           <p>
             {rating.average == null ? (
@@ -47,13 +58,6 @@ const ShowMainInfo = ({ image, name, rating, genres, language }) => {
               'No Language specified'
             )}
           </p>
-          <StyledShowCards>
-            <div className="btn-wrapper">
-              <button type="button" className="btn">
-                Add to list +
-              </button>
-            </div>
-          </StyledShowCards>
         </div>
       </div>
     </div>

@@ -3,9 +3,10 @@ import MainPage from '../Components/MainPage';
 import { getAPI } from '../misc/fetchAPI';
 import ShowGrid from '../Components/Shows/ShowGrid';
 import ActorGrid from '../Components/Actors/ActorGrid';
+import { useLastSearched } from '../misc/custom-hooks';
 
 const Home = () => {
-  const [searchInput, setInput] = useState('');
+  const [searchInput, setInput] = useLastSearched();
   const [results, setResults] = useState(null);
   const [radioSearchOpt, setRadioSearchOpt] = useState('shows');
 

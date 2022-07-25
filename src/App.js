@@ -10,7 +10,7 @@ function App() {
       <Route exact path="/">
         <Home />
       </Route>
-      <Route exact path="/starred">
+      <Route exact path="/watch-list">
         <Starred />
       </Route>
       <Route exact path="/shows/:id">
