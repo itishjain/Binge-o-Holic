@@ -3,19 +3,22 @@
   "name": "Binge-o-Holic",
   "icons": [
     {
-      "src": "https://www.nicepng.com/png/full/198-1984647_netflix-n-png-popcorn-blue-icon.png",
+      "src": "public/popcorn_mask.png",
       "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "type": "image/x-icon",
+      "purpose": "maskable"
     },
     {
-      "src": "https://www.nicepng.com/png/full/198-1984647_netflix-n-png-popcorn-blue-icon.png",
+      "src": "public/popcorn_mask.png",
       "type": "image/png",
-      "sizes": "192x192"
+      "sizes": "192x192",
+      "purpose": "maskable"
     },
     {
-      "src": "https://www.nicepng.com/png/full/198-1984647_netflix-n-png-popcorn-blue-icon.png",
+      "src": "public/popcorn_mask2.png",
       "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "512x512",
+      "purpose": "maskable"
     }
   ],
   "start_url": ".",
