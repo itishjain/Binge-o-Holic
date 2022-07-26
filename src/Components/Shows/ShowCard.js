@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { StyledShowCards } from '../../ShowCard.styled';
-// import { StyleCard } from '../Styled';
-import { StyleText, Wishlist } from '../Styled';
+import { StyleText, WatchList } from '../Styled';
 
 const ShowCard = ({
   id,
@@ -45,9 +44,9 @@ const ShowCard = ({
       </p>
       <div className="btn-wrapper">
         <button type="button" className="btn" onClick={onWatchListClick}>
-          <Wishlist wishlisted={isStarred}>
+          <WatchList inWatchList={isStarred}>
             <p>{isStarred ? 'Added ✔ ' : 'Add to list + '}</p>
-          </Wishlist>
+          </WatchList>
         </button>
       </div>
     </StyledShowCards>

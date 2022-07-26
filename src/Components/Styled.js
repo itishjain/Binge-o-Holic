@@ -40,8 +40,6 @@ export const StyleText = styled.div`
   text-align: center;
 `;
 
-export const Wishlist = styled.p`
-  color: ${props => (props.wishlisted ? '#039902' : '#000')};
+export const WatchList = styled.p`
+  color: ${props => (props.inWatchList ? '#039902' : '#000')};
 `;
-
-// export <Wishlist>{wishlisted ? 'Added to the list ✔ ' : 'Add to list + '}</Wishlist>

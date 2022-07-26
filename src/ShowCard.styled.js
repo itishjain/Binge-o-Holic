@@ -22,10 +22,12 @@ export const StyledShowCards = styled(StyleCard)`
   }
 
   .readMore {
+    text-decoration: none;
     font-size: 15px;
+    color: rgb(203, 255, 187);
   }
   .readMore:hover {
-    color: purple;
+    color: rgb(249, 182, 255);
     font-size: 17px;
   }
 `;

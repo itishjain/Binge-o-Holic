@@ -1,9 +1,11 @@
 body {
   font-family: 'Roboto', sans-serif;
+  color: #e2e2e2;
+
   font-size: 18px;
-  margin: 0;
+  margin: 0 auto;
   padding: 40px 0 0 0;
-  background-color: rgb(231, 230, 230);
+  background-color: #6e0000;
   /* background: url(../src/images/theatre.jpg);
   background-position: center;
   background-size: cover; */
@@ -29,9 +31,11 @@ label {
   margin: 1.2em 1.2em 0 0;
   height: 2.3em;
   width: 30em;
+  outline: none;
   border: none;
   border-radius: 5px;
   box-shadow: 2px 2px 2px #1d1d1d;
+  padding-left: 10px;
 }
 
 #searchBtn {
@@ -56,7 +60,8 @@ label {
 } */
 
 .navlinks {
-  margin: 10px 0 10px 0;
+  margin: 0 auto;
+  margin: 10px 30px 10px 0;
   display: flex;
   justify-content: space-evenly;
   list-style: none;
@@ -65,11 +70,7 @@ label {
 
 .navigation {
   margin: 0 auto;
-  background-color: rgb(233, 233, 233);
-  padding: 10px;
-  margin-bottom: 20px;
-  box-shadow: 3.5px 3.5px 5px #1d1d1dbb;
-  border-radius: 20px;
+  margin-bottom: 50px;
 }
 
 .linkItem:hover {
@@ -180,11 +181,32 @@ label {
   cursor: pointer;
 }
 .show-Title {
-  color: #df2f45;
+  color: rgb(236, 170, 1);
   margin-bottom: 90px;
 }
 
 .show-Heading {
   font-size: 50px;
   font-weight: 500;
+}
+
+.SiteName {
+  margin: 0 auto;
+  font-size: 60px;
+  color: rgb(236, 170, 1);
+  font-family: 'Rampart One', 'Orbitron';
+  letter-spacing: 5px;
+}
+
+.subtitle {
+  font-family: 'Orbitron';
+  color: #ffa58d;
+  letter-spacing: 2px;
+}
+
+.LookingFor {
+  color: #fff6f4;
+  font-family: 'Orbitron';
+  letter-spacing: 5px;
+  font-size: 30px;
 }

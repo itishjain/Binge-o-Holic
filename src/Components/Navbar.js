@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useLocation } from 'react-router';
+// import { Link } from 'react-router-dom';
+import { LinkStyled } from './navbar.styled';
 
 const LINKS = [
   { to: '/', text: 'Home' },
@@ -7,12 +9,19 @@ const LINKS = [
 ];
 
 const Navbar = () => {
+  const Location = useLocation();
+
   return (
     <div className="navigation">
       <ul className="navlinks">
         {LINKS.map(items => (
           <li key={items.to} className="linkItem">
-            <Link to={items.to}>{items.text}</Link>
+            <LinkStyled
+              to={items.to}
+              className={items.to === Location.pathname ? 'hover' : ''}
+            >
+              {items.text}
+            </LinkStyled>
           </li>
         ))}
         {/* <li>                                            // This is converted into an object as above to avoid repition

@@ -68,7 +68,9 @@ const Home = () => {
 
   return (
     <MainPage>
-      <h1 align="center">What are you looking for ?</h1>
+      <h1 align="center" className="LookingFor">
+        What are you looking for ?
+      </h1>
       <div align="center">
         <div className="radioBtns">
           <label htmlFor="searchShows">
@@ -99,7 +101,7 @@ const Home = () => {
             onChange={onInputChange}
             onKeyDown={resultPressingEnter}
             value={searchInput}
-            placeholder="  Search Something ......"
+            placeholder="🔎 Search Something ...."
           />
           <button id="searchBtn" type="button" onClick={onSearch}>
             Search
