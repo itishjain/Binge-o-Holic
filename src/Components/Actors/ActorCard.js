@@ -23,8 +23,7 @@ const ActorCard = ({ name, gender, image, birthday, country, deathday }) => {
         {country}
       </p>
       <p>
-        <b>Death-Day (yyyy-mm-dd) : </b>
-        {deathday ? `Died on - ${deathday}` : 'Alive'}
+        <b>{deathday ? `Died on - ${deathday}` : 'Alive'}</b>
       </p>
     </ActorCards>
   );
