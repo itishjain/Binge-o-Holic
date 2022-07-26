@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Binge-o-Holic/static/css/main.6e247ccf.css",
+    "main.css": "/Binge-o-Holic/static/css/main.2b94a194.css",
     "main.js": "/Binge-o-Holic/static/js/main.3860a55b.js",
     "static/js/787.6920f58d.chunk.js": "/Binge-o-Holic/static/js/787.6920f58d.chunk.js",
     "service-worker.js": "/Binge-o-Holic/service-worker.js",
     "index.html": "/Binge-o-Holic/index.html",
-    "main.6e247ccf.css.map": "/Binge-o-Holic/static/css/main.6e247ccf.css.map",
+    "main.2b94a194.css.map": "/Binge-o-Holic/static/css/main.2b94a194.css.map",
     "main.3860a55b.js.map": "/Binge-o-Holic/static/js/main.3860a55b.js.map",
     "787.6920f58d.chunk.js.map": "/Binge-o-Holic/static/js/787.6920f58d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e247ccf.css",
+    "static/css/main.2b94a194.css",
     "static/js/main.3860a55b.js"
   ]
 }
